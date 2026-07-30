@@ -1,2 +1,0 @@
-# nailsbyamanda
-Nails by Amanda
