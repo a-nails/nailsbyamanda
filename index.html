@@ -1,0 +1,109 @@
+<!-- Das ist eine HTML-Datei -->
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nails by Amanda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="home-page">
+
+    <header class="site-header">
+        <div class="container header-top">
+
+            <div class="brand">
+                <a href="index.html" class="brand-link" aria-label="Zur Startseite" aria-current="page">
+                    <img
+                        src="Bilder/Logo_2026-06-27_ohneHintergrund.png"
+                        alt="Nails by Amanda"
+                        class="logo-image"
+                    >
+                </a>
+            </div>
+
+            <nav class="main-nav" aria-label="Hauptnavigation">
+                <a href="galerie.html">Galerie</a>
+                <a href="preise.html">Preise</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="ueber-mich.html">Über mich</a>
+            </nav>
+            <div class="nav-dropdown">
+                <button class="nav-dropbtn" type="button" aria-expanded="false" aria-label="Menü öffnen" onclick="event.stopPropagation(); const open = this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', open);">
+                    <span class="nav-hamburger" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+                <div class="nav-dropdown-menu">
+                    <a href="galerie.html">Galerie</a>
+                    <a href="preise.html">Preise</a>
+                    <a href="kontakt.html">Kontakt</a>
+                    <a href="ueber-mich.html">Über mich</a>
+                </div>
+            </div>
+            <div class="header-action">
+                <a class="whatsapp-link" href="https://wa.me/41782228992" target="_blank" rel="noreferrer noopener" aria-label="WhatsApp Nachricht senden">
+                    <img src="Bilder/Whatsapp_Logo.png" alt="WhatsApp">
+                </a>
+                <a class="social-link" href="https://www.instagram.com/nailsbyamanda.ch/" target="_blank" rel="noreferrer noopener" aria-label="Instagram Profil öffnen">
+                    <img src="Bilder/Instagram_Logo.png" alt="Instagram">
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="home-hero">
+            <div class="container home-hero-inner">
+                <img
+                    src="Bilder/Amanda_Homestudio.JPG"
+                    alt="Amanda Homestudio"
+                    class="home-hero-image"
+                    loading="eager"
+                    decoding="sync"
+                >
+                <div class="home-hero-copy">
+                    <p>Willkommen bei Nails by Amanda<br>Ich bin Amanda, 21 Jahre alt und ausgebildete Naildesignerin. In meinem Homestudio in Haag nehme ich mir Zeit für dich, deine Wünsche und deinen persönlichen Stil. Mir ist wichtig, dass du dich bei mir wohlfühlst und mit Nägeln nach Hause gehst, die wirklich zu dir passen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="flyer-section">
+            <div class="container flyer-card">
+                <img
+                    src="Bilder/Eröffnungsaktion_2026-06-27.png"
+                    alt="Flyer Eröffnungsaktion"
+                    class="flyer-image"
+                >
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdown = document.querySelector('.nav-dropdown');
+            if (!dropdown) return;
+            const button = dropdown.querySelector('.nav-dropbtn');
+            button.addEventListener('click', function (event) {
+                event.stopPropagation();
+                const isOpen = dropdown.classList.toggle('open');
+                button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+            document.addEventListener('click', function (event) {
+                if (!dropdown.contains(event.target)) {
+                    dropdown.classList.remove('open');
+                    button.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

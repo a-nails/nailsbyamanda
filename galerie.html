@@ -1,0 +1,79 @@
+<!-- Galerie-Seite -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-top">
+            <div class="brand">
+                <img src="Bilder/Logo_2026-06-27_ohneHintergrund.png" alt="Amanda Logo" class="logo-image">
+            </div>
+            <nav class="main-nav" aria-label="Hauptnavigation">
+                <div class="nav-dropdown">
+                    <button class="nav-dropbtn" type="button" aria-expanded="false" aria-label="Menü öffnen" onclick="event.stopPropagation(); const open = this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', open);">
+                        <span class="nav-hamburger" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="index.html">Home</a>
+                        <a href="galerie.html" class="active">Galerie</a>
+                        <a href="preise.html">Preise</a>
+                        <a href="kontakt.html">Kontakt</a>
+                        <a href="ueber-mich.html">Über mich</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="header-action">
+                <a class="whatsapp-link" href="https://wa.me/41782228992" target="_blank" rel="noreferrer noopener" aria-label="WhatsApp Nachricht senden">
+                    <img src="Bilder/Whatsapp_Logo.png" alt="WhatsApp">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-section">
+        <div class="container">
+            <section class="gallery">
+                <h2 class="gallery-title">Galerie</h2>
+                <div class="gallery-grid">
+                    <article class="gallery-card"><img src="Bilder/Nails_1_Format54.PNG" alt="Nails 1" onclick="openPreview('Bilder/Nails_1_Format54.PNG','Nails 1')"></article>
+                    <article class="gallery-card"><img src="Bilder/Nails_2_Format54.jpg" alt="Nails 2" onclick="openPreview('Bilder/Nails_2_Format54.jpg','Nails 2')"></article>
+                    <article class="gallery-card"><img src="Bilder/Nails_3_Format54.jpg" alt="Nails 3" onclick="openPreview('Bilder/Nails_3_Format54.jpg','Nails 3')"></article>
+                    <article class="gallery-card"><img src="Bilder/Nails_4_Format54.jpg" alt="Nails 4" onclick="openPreview('Bilder/Nails_4_Format54.jpg','Nails 4')"></article>
+                    <article class="gallery-card"><img src="Bilder/Nails_5_Format54.PNG" alt="Nails 5" onclick="openPreview('Bilder/Nails_5_Format54.PNG','Nails 5')"></article>
+                    <article class="gallery-card"><img src="Bilder/Nails_6_Format54.JPG" alt="Nails 6" onclick="openPreview('Bilder/Nails_6_Format54.JPG','Nails 6')"></article>
+                    <article class="gallery-card"><img src="Bilder/Nails_7_Format54.jpg" alt="Nails 7" onclick="openPreview('Bilder/Nails_7_Format54.jpg','Nails 7')"></article>
+                    <article class="gallery-card"><img src="Bilder/Nails_8_Format54.jpg" alt="Nails 8" onclick="openPreview('Bilder/Nails_8_Format54.jpg','Nails 8')"></article>
+                    <article class="gallery-card"><img src="Bilder/Nails_9_Format54.jpg" alt="Nails 9" onclick="openPreview('Bilder/Nails_9_Format54.jpg','Nails 9')"></article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <script>
+        function openPreview(imageSrc, captionText) {
+            const modal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+            const modalCaption = document.getElementById('modal-caption');
+            modalImage.src = imageSrc;
+            modalImage.alt = captionText;
+            modalCaption.textContent = captionText;
+            modal.removeAttribute('hidden');
+        }
+
+        function closePreview() {
+            const modal = document.getElementById('image-modal');
+            modal.setAttribute('hidden', '');
+        }
+    </script>
+</body>
+</html>
